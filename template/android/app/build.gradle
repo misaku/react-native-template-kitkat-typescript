@@ -215,6 +215,20 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    configurations.all {
+      resolutionStrategy {
+        force 'com.facebook.fresco:fresco:2.3.0'
+        force 'com.facebook.fresco:imagepipeline:2.3.0'
+        force 'com.facebook.fresco:imagepipeline-okhttp3:2.3.0'
+        force 'com.facebook.fresco:stetho:2.3.0'
+
+        force 'com.facebook.flipper:flipper:0.54.0'
+        force 'com.facebook.flipper:flipper-network-plugin:0.54.0'
+        force 'com.facebook.flipper:flipper-fresco-plugin:0.54.0'
+
+      }
+    }
 }
 
 // Run this once to be able to run the application with BUCK

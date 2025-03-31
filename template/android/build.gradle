@@ -2,26 +2,24 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "29.0.2"
+        buildToolsVersion = "30.0.3"      // Atualize para uma versão estável mais recente
         minSdkVersion = 16
-        compileSdkVersion = 29
-        targetSdkVersion = 29
-        ndkVersion = "21.4.7075529"
+        compileSdkVersion = 30
+        targetSdkVersion = 30
+        ndkVersion = "21.1.6352462"      // Mantenha compatível com 2021
     }
     repositories {
-        google()
-        jcenter()
+        google()                         // Repositório para dependências do Android
+        mavenCentral()                   // Substituto do jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.3")
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath("com.android.tools.build:gradle:4.2.2") // Compatível com Gradle 6.9
     }
 }
 
 allprojects {
     repositories {
-        mavenLocal()
+        mavenLocal() // Repositórios locais
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")
@@ -32,7 +30,7 @@ allprojects {
         }
 
         google()
-        jcenter()
+        mavenCentral()
         maven { url 'https://www.jitpack.io' }
         maven { url "https://maven.google.com" }
     }
